@@ -178,11 +178,11 @@
     },
     "latest": {
       "locked": {
-        "lastModified": 1625911849,
-        "narHash": "sha256-JW3PpSTD5KlScgzSC41czoP/ofMYTAgDxdjaUv88Tdc=",
+        "lastModified": 1626003303,
+        "narHash": "sha256-6Y68hWpjgXm2jdkNd/bhrDL+hs8BxB84O1oTkpAD9aI=",
         "owner": "lourkeur",
         "repo": "nixpkgs",
-        "rev": "ae20ffaee63b98e8d9af03227f18103a436e2e75",
+        "rev": "edc4db11f6aae1d13de4a308778fb413ab8cc56a",
         "type": "github"
       },
       "original": {
