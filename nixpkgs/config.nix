@@ -14,10 +14,6 @@
       "oraclejdk"
     ];
 
-  permittedInsecurePackages = [
-    "ffmpeg-3.4.8"
-  ];
-
   doCheckByDefault = false;
 
   firefox = {
