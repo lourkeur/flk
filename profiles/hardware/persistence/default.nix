@@ -4,6 +4,8 @@
       "/var/db/sudo"
       "/var/log"
       "/var/lib/libvirt"
+      "/var/lib/lxc"
+      "/var/lib/lxd"
       "/var/lib/systemd/coredump"
       "/var/lib/transmission"
       "/var/tmp"
