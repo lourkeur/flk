@@ -15,6 +15,7 @@
       ../profiles/git
       ../profiles/gnome/shell.nix
       ../profiles/gnome/yaru.nix
+      ../profiles/nix-index
       ../profiles/shell/bash
       ../profiles/shell/fish
       ../profiles/spacevim
