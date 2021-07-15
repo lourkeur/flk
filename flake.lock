@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "nixpkgs": [
+          "latest"
+        ]
+      },
+      "locked": {
+        "lastModified": 1620877075,
+        "narHash": "sha256-XvgTqtmQZHegu9UMDSR50gK5cHEM2gbnRH0qecmdN54=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "e543aa7d68f222e1e771165da9e9a64b5bf7b3e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -80,17 +100,17 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1622484894,
-        "narHash": "sha256-n3Vn4H1muqDcoMtXS59c0ZZthSJ11gFAodfo1LSQvj8=",
+        "lastModified": 1623197477,
+        "narHash": "sha256-2Qk/uIHb1nXre2rRlGonAJmpuamBs7RRfgXhMmS5JkU=",
         "owner": "divnix",
         "repo": "digga",
-        "rev": "0cbc8bd4defee8fddc0c582556267bd2c1c02704",
+        "rev": "f69703abc33f221b676966a8435c4f09ef70ff49",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
+        "ref": "master",
         "repo": "digga",
-        "rev": "0cbc8bd4defee8fddc0c582556267bd2c1c02704",
         "type": "github"
       }
     },
@@ -362,6 +382,7 @@
     },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "darwin": "darwin",
         "digga": "digga",
         "home": "home",
@@ -395,11 +416,11 @@
         "flake-utils": "flake-utils"
       },
       "locked": {
-        "lastModified": 1620801141,
-        "narHash": "sha256-XPJ+/nP/s218E11R+4LJyvkrQXvdT3D6TzNjfWVYZnI=",
+        "lastModified": 1622583383,
+        "narHash": "sha256-2DFx619SNfjzYwqx1ryae8zHnTh+N7VsZkbtAbrYIIA=",
         "owner": "gytis-ivaskevicius",
         "repo": "flake-utils-plus",
-        "rev": "1a742047f3f7c97b22768ba7738ac5a01052099e",
+        "rev": "6b2ea4b02cad77fac581c6a9ec4f822ba87dce5c",
         "type": "github"
       },
       "original": {

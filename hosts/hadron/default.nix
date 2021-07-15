@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ suites, ... }:
+{ profiles, suites, ... }:
 
 {
   imports =
@@ -11,17 +11,17 @@
     suites.buildServer ++
     [
       # Include the results of the hardware scan.
-      hadron/hardware-configuration.nix
-      ../profiles/torbox
-      ../profiles/daemons/libvirt
-      ../profiles/daemons/transmission
-      ../profiles/daemons/chia-wallet
-      ../profiles/hardware/persistence
-      ../profiles/tools/teck-programmer
+      ./hardware-configuration.nix
+      profiles.torbox
+      profiles.daemons.libvirt
+      profiles.daemons.transmission
+      profiles.daemons.chia-wallet
+      profiles.hardware.persistence
+      profiles.tools.teck-programmer
     ];
 
   specialisation.nvidia.configuration.imports = [
-    ../profiles/hardware/nvidiaLegacy390
+    profiles.hardware.nvidiaLegacy390
   ];
 
   # GRUB

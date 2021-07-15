@@ -5,7 +5,7 @@
     {
       nixos.url = "nixpkgs/nixos-21.05";
       latest.url = "github:lourkeur/nixpkgs";
-      digga.url = "github:divnix/digga/0cbc8bd4defee8fddc0c582556267bd2c1c02704";
+      digga.url = "github:divnix/digga/master";
 
       darwin.url = "github:LnL7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "latest";
@@ -16,13 +16,27 @@
       miniguest.inputs.nixpkgs.follows = "nixos";
       naersk.url = "github:nmattia/naersk";
       naersk.inputs.nixpkgs.follows = "latest";
+      agenix.url = "github:ryantm/agenix";
+      agenix.inputs.nixpkgs.follows = "latest";
       nixos-hardware.url = "github:nixos/nixos-hardware";
 
       pkgs.url = "path:./pkgs";
       pkgs.inputs.nixpkgs.follows = "nixos";
     };
 
-  outputs = inputs@{ self, pkgs, digga, nixos, home, impermanence, miniguest, nixos-hardware, nur, ... }:
+  outputs =
+    { self
+    , pkgs
+    , digga
+    , nixos
+    , home
+    , impermanence
+    , miniguest
+    , nixos-hardware
+    , nur
+    , agenix
+    , ...
+    } @ inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -35,6 +49,7 @@
             ./pkgs/default.nix
             pkgs.overlay # for `srcs`
             nur.overlay
+            agenix.overlay
           ];
         };
         latest = { };
@@ -59,6 +74,7 @@
           externalModules = [
             { _module.args.ourLib = self.lib; }
             home.nixosModules.home-manager
+            agenix.nixosModules.age
             impermanence.nixosModules.impermanence
             miniguest.nixosModules.miniguest
             ./modules/customBuilds.nix
@@ -76,36 +92,40 @@
           rpi4-bootstrap.system = "aarch64-linux";
           rpi4-bootstrap.modules = [ nixos-hardware.nixosModules.raspberry-pi-4 ];
         };
-        profiles = [ ./profiles ./users ];
-        suites = { profiles, users, ... }: with profiles; rec {
-          base = [ core users.root ];
-          gnome = [ graphical graphical.gnome ];
-          allTools = with tools; [
-            tools # the root
-            gnupg
-            jdk
-            podman
-            wireshark
-          ];
+        importables = rec {
+          profiles = digga.lib.importers.rakeLeaves ./profiles // {
+            users = digga.lib.importers.rakeLeaves ./users;
+          };
+          suites = with profiles; rec {
+            base = [ core users.root ];
+            gnome = [ graphical.common graphical.gnome ];
+            allTools = with tools; [
+              misc
+              gnupg
+              jdk
+              podman
+              wireshark
+            ];
 
-          workstation = base ++ allTools ++ [
-            users.louis
-            users.louis.singleUser
-            misc.sign-store-paths
-            network.nfs
-            network.printers
-            network.keybase
-          ];
+            workstation = base ++ allTools ++ [
+              users.louis
+              users/louis/singleUser
+              misc.sign-store-paths
+              network.nfs
+              network.printers
+              network.keybase
+            ];
 
-          laptop = workstation ++ [
-            profiles.laptop
-          ];
+            laptop = workstation ++ [
+              profiles.laptop
+            ];
 
-          buildServer = [
-            misc.sign-store-paths
-            network.nix-build-server
-            network.nix-serve
-          ];
+            buildServer = [
+              misc.sign-store-paths
+              network.nix-build-server
+              network.nix-serve
+            ];
+          };
         };
       };
 
@@ -114,10 +134,16 @@
         externalModules = [
           "${impermanence}/home-manager.nix"
         ];
-        profiles = [ ./users/profiles ];
-        suites = { profiles, ... }: with profiles; rec {
-          base = [ direnv git ];
+        importables = rec {
+          profiles = digga.lib.importers.rakeLeaves ./users/profiles;
+          suites = with profiles; rec {
+            base = [ direnv git ];
+          };
         };
+      };
+
+      devshell.externalModules = { pkgs, ... }: {
+        packages = [ pkgs.agenix ];
       };
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;

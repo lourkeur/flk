@@ -1,14 +1,14 @@
-{ suites, ... }:
+{ profiles, suites, ... }:
 
 {
   imports =
     suites.base ++
     [
       # Include the results of the hardware scan.
-      minecraft/hardware-configuration.nix
-      ../users/minecraft
-      ../profiles/tools/jdk
-      ../profiles/daemons/tor
+      ./hardware-configuration.nix
+      profiles.users.minecraft
+      profiles.tools.jdk
+      profiles.daemons.tor
     ];
 
   # Use miniguest

@@ -1,4 +1,4 @@
-{ suites, ... }:
+{ profiles, suites, ... }:
 
 {
   imports =
@@ -6,10 +6,10 @@
     suites.gnome ++
     [
       # Include the results of the hardware scan.
-      hadronsson/hardware-configuration.nix
-      ../profiles/hardware/persistence
-      ../profiles/tools/teck-programmer
-      ../profiles/daemons/libvirt
+      ./hardware-configuration.nix
+      profiles.hardware.persistence
+      profiles.tools.teck-programmer
+      profiles.daemons.libvirt
     ];
 
   # Use the GRUB 2 boot loader.

@@ -13,6 +13,7 @@ channels: final: prev: {
     element-desktop
     gotop
     manix
+    rage
     multimc
     nixpkgs-fmt
     obs-studio

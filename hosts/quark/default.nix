@@ -1,9 +1,9 @@
-{ pkgs, suites, ... }: {
+{ profiles, suites, ... }: {
   imports =
     suites.base ++
     [
-      quark/hardware-configuration.nix
-      ../profiles/daemons/chia-harvester
+      ./hardware-configuration.nix
+      profiles.daemons.chia-harvester
     ];
 
   environment.minimalize.enable = true;
