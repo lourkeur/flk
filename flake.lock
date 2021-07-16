@@ -63,11 +63,11 @@
     },
     "devshell": {
       "locked": {
-        "lastModified": 1618523768,
-        "narHash": "sha256-Gev9da35pHUey3kGz/zrJFc/9ICs++vPCho7qB1mqd8=",
+        "lastModified": 1622013274,
+        "narHash": "sha256-mK/Lv0lCbl07dI5s7tR/7nb79HunKnJik3KyR6yeI2k=",
         "owner": "numtide",
         "repo": "devshell",
-        "rev": "709fe4d04a9101c9d224ad83f73416dce71baf21",
+        "rev": "e7faf69e6bf8546517cc936c7f6d31c7eb3abcb2",
         "type": "github"
       },
       "original": {
@@ -198,11 +198,11 @@
     },
     "latest": {
       "locked": {
-        "lastModified": 1626360094,
-        "narHash": "sha256-Vp04KsgEghQ2iCwz0gPtcx1bN2waf7l/9zPlNFMRqYA=",
+        "lastModified": 1626430135,
+        "narHash": "sha256-dTed6SNJHzfQya0iJ1mnj3SBelBW5MOTROeq6XEqwY4=",
         "owner": "lourkeur",
         "repo": "nixpkgs",
-        "rev": "9fcac2cfeb1d2d57d4cc9c0de60e36b263d8fd0b",
+        "rev": "efff9afd83d796ce24ac068b9998f20a9de0ea35",
         "type": "github"
       },
       "original": {
@@ -291,11 +291,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1626298747,
-        "narHash": "sha256-jkZfG3+YFgUn7fwUK9LOP0+aUq80XTVN6QsU7r2zcTg=",
+        "lastModified": 1626395775,
+        "narHash": "sha256-7Uo+4PIQGirfd7WfFuRuspLCyDT7eUn6pnJx/CL9UC8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1f4e50f03c549addf78d4dde77e897ccbdd21947",
+        "rev": "a165aeceda9f9741d15bc2488425daeb06c0707e",
         "type": "github"
       },
       "original": {
@@ -354,10 +354,9 @@
       "locked": {
         "lastModified": 1626360967,
         "narHash": "sha256-ahFG7hMGE1k22iOcPUn1zWU3o53OIiNpGOKMQZKHrsE=",
-        "owner": "nix-community",
-        "repo": "NUR",
+        "path": "/nix/store/kg3nhg4n57qa107rly7ir6amhs1kmgy7-source",
         "rev": "0e744c2d5d6900c18868f3c3df93df4e8c123606",
-        "type": "github"
+        "type": "path"
       },
       "original": {
         "id": "nur",
@@ -371,7 +370,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-ZYwvF8D7B9bVl0U/MggLzq2Bmstx4dD+V4ufLc4+yfc=",
+        "narHash": "sha256-yWNXmaLr/0wGeV32xhoYsyuxHs9EY3KKvlYL5+b1bHo=",
         "path": "./pkgs",
         "type": "path"
       },
