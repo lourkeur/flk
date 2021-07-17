@@ -9,6 +9,7 @@
       tup
       youtube-dl
       binutils
+      clinfo
       coreutils
       curl
       direnv
@@ -17,8 +18,9 @@
       fd
       file
       git
-      gptfdisk
+      glxinfo
       gotop
+      gptfdisk
       iputils
       jq
       less
@@ -29,6 +31,7 @@
       nix-index
       nmap
       pass-otp
+      pciutils
       prs
       python3
       qrencode
