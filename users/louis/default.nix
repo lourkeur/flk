@@ -54,9 +54,11 @@
 
     packages = with pkgs; [
       element-desktop
+      ffmpeg-full
       multimc
       nixpkgs-fmt
       tipp10
+      youtube-dl
     ];
 
     shell = pkgs.fish;

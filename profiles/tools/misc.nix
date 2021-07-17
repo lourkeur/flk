@@ -3,9 +3,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      ffmpeg-full
-      tup
-      youtube-dl
       binutils
       clinfo
       coreutils
@@ -36,6 +33,7 @@
       ripgrep
       skim
       tealdeer
+      tup
       usbutils
       utillinux
       whois
