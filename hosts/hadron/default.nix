@@ -14,6 +14,7 @@
       ./hardware-configuration.nix
       profiles.torbox
       profiles.daemons.libvirt
+      profiles.daemons.lxd
       profiles.daemons.transmission
       profiles.daemons.chia-wallet
       profiles.hardware.persistence
