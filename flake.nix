@@ -88,9 +88,9 @@
           hadron.modules = [ common-cpu-intel-sandy-bridge ];
           hadronsson.modules = [ common-cpu-intel-sandy-bridge ];
           quark.system = "aarch64-linux";
-          quark.modules = [ nixos-hardware.nixosModules.raspberry-pi-4 ];
+          quark.modules = [ raspberry-pi-4 ];
           rpi4-bootstrap.system = "aarch64-linux";
-          rpi4-bootstrap.modules = [ nixos-hardware.nixosModules.raspberry-pi-4 ];
+          rpi4-bootstrap.modules = [ raspberry-pi-4 ];
         };
         importables = rec {
           profiles = digga.lib.importers.rakeLeaves ./profiles // {
@@ -99,13 +99,7 @@
           suites = with profiles; rec {
             base = [ core users.root ];
             gnome = [ graphical.common graphical.gnome ];
-            allTools = with tools; [
-              misc
-              gnupg
-              jdk
-              podman
-              wireshark
-            ];
+            allTools = builtins.attrValues tools;
 
             workstation = base ++ allTools ++ [
               users.louis
@@ -114,10 +108,6 @@
               network.nfs
               network.printers
               network.keybase
-            ];
-
-            laptop = workstation ++ [
-              profiles.laptop
             ];
 
             buildServer = [

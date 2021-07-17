@@ -18,7 +18,6 @@
       profiles.daemons.transmission
       profiles.daemons.chia-wallet
       profiles.hardware.persistence
-      profiles.tools.teck-programmer
     ];
 
   specialisation.nvidia.configuration.imports = [

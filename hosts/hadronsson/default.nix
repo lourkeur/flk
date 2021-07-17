@@ -2,13 +2,13 @@
 
 {
   imports =
-    suites.laptop ++
+    suites.workstation ++
     suites.gnome ++
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      profiles.hardware.wifi
       profiles.hardware.persistence
-      profiles.tools.teck-programmer
       profiles.daemons.libvirt
     ];
 
