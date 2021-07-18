@@ -17,12 +17,10 @@
       profiles.daemons.lxd
       profiles.daemons.transmission
       profiles.daemons.chia-wallet
+      profiles.hardware.nvidiaLegacy390
       profiles.hardware.persistence
+      profiles.users.minecraft
     ];
-
-  specialisation.nvidia.configuration.imports = [
-    profiles.hardware.nvidiaLegacy390
-  ];
 
   # GRUB
   boot.loader.grub.enable = true;

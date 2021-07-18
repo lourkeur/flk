@@ -1,14 +1,15 @@
 { pkgs, ... }:
 
-# user account for minecraft.
+# unprivileged user account for playing Minecraft.
 
 {
-  home-manager.users.minecraft = {
-    imports = [
-      ../profiles/autojump
-      ../profiles/firefox
-      ../profiles/shell/fish
-      ../profiles/git
+  home-manager.users.minecraft = { profiles, ... }: {
+    imports = with profiles;[
+      autojump
+      firefox
+      shell.fish
+      git
+      xcape
     ];
 
     home.stateVersion = "20.09";
@@ -16,10 +17,13 @@
 
   users.users.minecraft = {
     isNormalUser = true;
+    uid = 2039;
 
     extraGroups = [
       "audio"
     ];
+
+    hashedPassword = "";
 
     packages = with pkgs; [
       multimc
