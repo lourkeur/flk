@@ -93,7 +93,7 @@ in
 
     useSandbox = true;
 
-    allowedUsers = [ "nix-ssh" "@wheel" ];
+    allowedUsers = [ "nix-ssh" "@users" ];
 
     trustedUsers = [ "root" "@wheel" ];
 
