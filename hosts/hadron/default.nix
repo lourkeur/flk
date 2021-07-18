@@ -43,6 +43,9 @@
   networking.hosts."192.168.122.38" = [ "minecraft" ];
 
   hardware.nvidia.prime = {
+    # sync because the video ports are controlled by the iGPU and the legacy
+    # NVidia driver does not support offload mode
+    sync.enable = true;
     intelBusId = "PCI:00:02:0";
     nvidiaBusId = "PCI:01:00:0";
   };
