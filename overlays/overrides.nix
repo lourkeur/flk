@@ -15,7 +15,6 @@ channels: final: prev: {
     manix
     rage
     multimc
-    nixpkgs-fmt
     obs-studio
     prs
     qutebrowser
