@@ -31,6 +31,11 @@
 
   boot.initrd.kernelModules = [ "dm-raid" ];
 
+  boot.kernelPatches = [{
+    name = "!revert sr: Fix get the error media event code";
+    patch = ./no-eject.patch;
+  }];
+
   networking.hostName = "hadron"; # Define your hostname.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
