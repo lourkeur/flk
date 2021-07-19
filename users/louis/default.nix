@@ -57,6 +57,7 @@
       ffmpeg-full
       multimc
       tipp10
+      virt-manager
       youtube-dl
     ];
 
